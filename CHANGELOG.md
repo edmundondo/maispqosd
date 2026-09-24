@@ -1,5 +1,12 @@
 # Changelog — maispqosd
 
+## [1.3.1] — 2026-09-23
+
+### Fixed
+- Automatic speed test stored loaded latency/jitter as `0` (the library's "not measured" value, which
+  reads as a perfect score) — now stored as empty. Live progress no longer flashes "↓ 0.0 Mbps".
+  Verified live on the Zimbabwe site: 211.7 Mbps ↓ / 154.3 Mbps ↑ filled in automatically.
+
 ## [1.3.0] — 2026-09-23
 
 ### Fixed
