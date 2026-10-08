@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="app-version" content="1.3.1">
+<meta name="app-version" content="1.4.0">
 <title>Malawi ISP Tracker</title>
+<meta name="description" content="Independent, crowdsourced quality ratings, outage reports and speed tests for MACRA-licensed internet providers in Malawi. A Matokipedo project, not affiliated with MACRA or any provider.">
 <style>
   :root{
     --bg:#0b0f14;
@@ -431,12 +432,12 @@
 </script>
 <div class="wrap">
   <header>
-    <div class="eyebrow">MACRA · Malawi Telecoms</div>
+    <div class="eyebrow">Independent tracker · MACRA-licensed providers</div>
     <h1>Malawi ISP Tracker</h1>
-    <div class="sub">4 tracked providers · mobile &amp; fixed/fibre internet access · last synced from company annual reports, MACRA licensing records and press reporting (2025-2026)</div>
+    <div class="sub">4 tracked providers · mobile &amp; fixed/fibre internet access · provider figures from company annual reports, MACRA licensing records and press reporting (2025-2026)</div>
     <div><span class="privacy-note">📍 Your GPS location is only used in your browser to work out the nearest tracked city — raw coordinates are never sent anywhere. Only the city name, star rating and comment are shared.</span></div>
     <div><span class="privacy-note">📱 On an older phone, a dot-matrix screen, or a slow connection? <a href="lite.html" style="color:inherit;">Try the no-script Lite version</a> — tiny download, works without JavaScript, includes an SMS rating option.</span></div>
-    <div><span class="backend-banner mode-local" id="backendBanner">🟡 Local demo mode — connect a free Supabase backend to make ratings shared (see README.md)</span></div>
+    <div><span class="backend-banner mode-connecting" id="backendBanner">⏳ Connecting to shared backend…</span></div>
     <div id="iodaBadge"></div>
     <div class="status-legend" id="statusLegend">
       <span class="legend-item"><span class="status-dot" style="background:var(--green)"></span> <span id="legendLiveLabel">Live</span></span>
@@ -616,8 +617,9 @@
       <img src="matokipedo-logo.jpg" alt="Matokipedo logo" class="matokipedo-logo">
       <span class="matokipedo-tagline">Live infrastructure monitoring by Matokipedo</span>
     </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:6px;">Independent project — not affiliated with or endorsed by MACRA or any provider listed.</div>
     <span class="reset-link" id="resetQos">refresh / reset local data</span>
-    <div style="font-size:11px;color:var(--muted);margin-top:6px;">v1.3.1 &middot; <a href="CHANGELOG.md" style="color:inherit;">changelog</a></div>
+    <div style="font-size:11px;color:var(--muted);margin-top:6px;">v1.4.0 &middot; <a href="CHANGELOG.md" style="color:inherit;">changelog</a></div>
   </footer>
 </div>
 
@@ -848,7 +850,7 @@ const I18N = {
   en: {
     lang_label: "Language",
     translate_help: "Help translate / suggest a correction",
-    banner_local: "🟡 Local demo mode — connect a free Supabase backend to make ratings shared (see README.md)",
+    banner_local: "🔴 Couldn't reach the shared backend — showing locally cached data only",
     banner_connecting: "⏳ Connecting to shared backend…",
     banner_live: "🟢 Connected — ratings are shared with every visitor (Supabase)",
     banner_error: "🔴 Couldn't reach the shared backend — showing locally cached data only",
@@ -943,7 +945,7 @@ const I18N = {
   ny: { // Chichewa — best-effort draft, unreviewed; shared with the Mozambique site's Cinyanja content (same language, ISO 639-3 nya)
     lang_label: "Chinenero",
     translate_help: "Thandizani kumasulira / perekani kukonzedwa",
-    banner_local: "🟡 Njira yakomweko — lumikizani ndi Supabase (yaulere) kuti deta igawidwe (onani README.md)",
+    banner_local: "🔴 Zalephera kufikira netiweki yogawana — kukuonetsa deta yosungidwa mu bulawuza iyi yokha",
     banner_connecting: "⏳ Kulumikizana ndi netiweki yogawana…",
     banner_live: "🟢 Yalumikizidwa — deta ikugawidwa ndi alendo onse (Supabase)",
     banner_error: "🔴 Zalephera kufikira netiweki yogawana — kukuonetsa deta yosungidwa mu bulawuza iyi yokha",
